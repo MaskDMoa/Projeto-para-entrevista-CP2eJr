@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projeto CP2</title>
+</head>
+<body>
+
+    <div class="topo">
+    <button class="btn-nova" onclick="abrirModal()">Nova Transação</button>
+    </div>
+
+    <dialog id="Modal">
+    <h2>Nova Transação</h2>
+
+    <input placeholder="Descrição">
+    <br>
+    <input placeholder="Preço">
+    <br>
+    <input placeholder="Categoria">
+
+    <div class="grid-container-button">
+        <div class="grid-button"><button>Entrada</button></div>
+        <div class="grid-button"><button>Saída</button></div>
+    </div>
+
+    <button>Cadastrar</button>
+</dialog>
+
+    <div class="grid-container">
+
+        <div class="grid-item">
+            <p class="string">Entradas</p>
+            <p class="number">R$ 0,00</p>
+        </div>
+        <div class="grid-item">
+            <p class="string">Saídas</p>
+            <p class="number">R$ 0,00</p>
+        </div>
+        <div class="grid-item3">
+            <p class="string">Total</p>
+            <p class="number">R$ 0,00</p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
