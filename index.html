@@ -8,42 +8,71 @@
 </head>
 <body>
 
+    
     <div class="topo">
     <button class="btn-nova" onclick="abrirModal()">Nova Transação</button>
     </div>
 
     <dialog id="Modal">
-    <h2>Nova Transação</h2>
 
-    <input placeholder="Descrição">
-    <br>
-    <input placeholder="Preço">
-    <br>
-    <input placeholder="Categoria">
+    <button class="btn-fechar" onclick="fecharModal()">X</button>
 
-    <div class="grid-container-button">
-        <div class="grid-button"><button>Entrada</button></div>
-        <div class="grid-button"><button>Saída</button></div>
-    </div>
+        <h2>Nova Transação</h2>
 
-    <button>Cadastrar</button>
-</dialog>
+        <div class="grid-container-modal">
+            <div class="modal-text">
+                <input type="text" id="descricao" placeholder="Descrição">
+            </div>
+            <div class="modal-text">
+                <input type="number" id="preco" placeholder="Preço">
+            </div>
+            <div class="modal-text">
+                <input type="text" id="categoria" placeholder="Categoria">
+            </div>
+        </div>
+
+        <div class="grid-container-button">
+            <button class="grid-button" id="btn-entrada" onclick="btnentry()">Entrada</button>
+            <button class="grid-button" id="btn-saida" onclick="btnout()">Saída</button>
+        </div>
+
+        <button class="btn-cadastrar" onclick="btncadastrar()">Cadastrar</button>
+
+    </dialog>
 
     <div class="grid-container">
 
         <div class="grid-item">
             <p class="string">Entradas</p>
-            <p class="number">R$ 0,00</p>
+            <p class="number" id="total-entradas">R$ 0,00</p>
         </div>
         <div class="grid-item">
             <p class="string">Saídas</p>
-            <p class="number">R$ 0,00</p>
+            <p class="number" id="total-saidas">R$ 0,00</p>
         </div>
         <div class="grid-item3">
             <p class="string">Total</p>
-            <p class="number">R$ 0,00</p>
+            <p class="number" id="total">R$ 0,00</p>
         </div>
 
+    </div>
+
+    <div class="continer-buscar">
+        <div class="barra-busca">
+
+            <input type="text" id="busca" placeholder="Busque uma Trasação" oninput="renderTransacao()">
+
+            <button class="btn-buscar" onclick="renderTransacao()">Buscar</button>
+
+        </div>
+
+    </div>
+
+    <div>
+        <table id="tabela-transacoes">
+            <tbody id="corpo-tabela"></tbody>
+        </table>
+        <p class="sem-resultados" id="sem-resultados" style="display:none">Nenhuma transação encontrada.</p>
     </div>
 
 

@@ -10,7 +10,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    gap: 29px;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
 .grid-item {
@@ -69,14 +70,241 @@ p {
 }
 
 #Modal {
-    background-color: #000000;
+    background-color: #202024;
     border: none;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 40px;
+    width: 300px;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+#Modal h2 {
+    margin: 0 0 24px 0;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 #Modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.651);
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #7c7c8a;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.btn-fechar:hover {
+    color: white;
+}
+
+.grid-container-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.grid-container-modal input {
+    background-color: #29292E;
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.grid-container-modal input::placeholder {
+    color: #7c7c8a;
+}
+
+.grid-container-modal input:focus {
+    outline: 1px solid #faae2b;
+}
+
+.grid-button {
+    background-color: #29292E;
+    color: #c4c4cc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.grid-button:hover {
+    border-color: #faae2b;
+    color: white;
+}
+
+.grid-button.ativo-entrada {
+    border-color: #00b37e;
+    color: #00b37e;
+}
+
+.grid-button.ativo-saida {
+    border-color: #f75a68;
+    color: #f75a68;
+}
+
+.btn-cadastrar {
+    background-color: #faae2b;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-cadastrar:hover {
+    background-color: #e89c1f;
+}
+
+.grid-button.ativo-entrada:hover {
+    border-color: #00b37e;
+    color: #00b37e;
+}
+
+.grid-button.ativo-saida:hover {
+    border-color: #f75a68;
+    color: #f75a68;
+}
+
+.grid-container {
+    margin-bottom: 40px;
+}
+ 
+.continer-buscar {
+    width: 1246px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto 12px auto;
+}
+ 
+.barra-busca {
+    display: flex;
+    align-items: center;
+    background-color: #29292E;
+    border-radius: 6px;
+    padding: 8px 12px;
+    gap: 10px;
+}
+ 
+.barra-busca input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+ 
+.barra-busca input::placeholder {
+    color: #7c7c8a;
+}
+ 
+.btn-buscar {
+    background-color: #faae2b;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+.btn-buscar:hover {
+    background-color: #e89c1f;
+}
+ 
+#tabela-transacoes {
+    width: 1246px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+ 
+#tabela-transacoes thead th {
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #7c7c8a;
+    border-bottom: 1px solid #323238;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+#tabela-transacoes thead th.data {
+    text-align: right;
+}
+ 
+#tabela-transacoes tbody tr {
+    border-bottom: 1px solid #323238;
+    transition: background 0.15s;
+}
+ 
+#tabela-transacoes tbody tr:last-child {
+    border-bottom: none;
+}
+ 
+#tabela-transacoes tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+ 
+#tabela-transacoes td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+.valor-entrada {
+    color: #00b37e !important;
+    font-weight: 600;
+}
+ 
+.valor-saida {
+    color: #f75a68 !important;
+    font-weight: 600;
+}
+ 
+.td-categoria {
+    color: #7c7c8a !important;
+    font-size: 13px;
+}
+ 
+.td-data {
+    color: #7c7c8a !important;
+    font-size: 13px;
+    text-align: right;
+}
+ 
+.sem-resultados {
+    text-align: center;
+    padding: 30px;
+    color: #7c7c8a;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
